@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/vendor/fira.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/languageSwitcher.css">
 </head>
 
 <body>
@@ -29,32 +30,33 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Commands <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-mlr-text>Commands <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/commands/querying">Querying</a></li>
-              <li><a href="/commands/traversal">Traversal</a></li>
-              <li><a href="/commands/actions">Actions</a></li>
-              <li><a href="/commands/window">Window</a></li>
-              <li><a href="/commands/viewport">Viewport</a></li>
-              <li><a href="/commands/location">Location</a></li>
-              <li><a href="/commands/navigation">Navigation</a></li>
-              <li><a href="/commands/assertions">Assertions</a></li>
-              <li><a href="/commands/misc">Misc</a></li>
-              <li><a href="/commands/connectors">Connectors</a></li>
-              <li><a href="/commands/aliasing">Aliasing</a></li>
-              <li><a href="/commands/waiting">Waiting</a></li>
-              <li><a href="/commands/network-requests">Network Requests</a></li>
-              <li><a href="/commands/files">Files</a></li>
-              <li><a href="/commands/local-storage">Local Storage</a></li>
-              <li><a href="/commands/cookies">Cookies</a></li>
-              <li><a href="/commands/spies-stubs-clocks">Spies, Stubs &amp; Clocks</a></li>
+              <li><a href="/commands/querying" data-mlr-text>Querying</a></li>
+              <li><a href="/commands/traversal" data-mlr-text>Traversal</a></li>
+              <li><a href="/commands/actions" data-mlr-text>Actions</a></li>
+              <li><a href="/commands/window" data-mlr-text>Window</a></li>
+              <li><a href="/commands/viewport" data-mlr-text>Viewport</a></li>
+              <li><a href="/commands/location" data-mlr-text>Location</a></li>
+              <li><a href="/commands/navigation" data-mlr-text>Navigation</a></li>
+              <li><a href="/commands/assertions" data-mlr-text>Assertions</a></li>
+              <li><a href="/commands/misc" data-mlr-text>Misc</a></li>
+              <li><a href="/commands/connectors" data-mlr-text>Connectors</a></li>
+              <li><a href="/commands/aliasing" data-mlr-text>Aliasing</a></li>
+              <li><a href="/commands/waiting" data-mlr-text>Waiting</a></li>
+              <li><a href="/commands/network-requests" data-mlr-text>Network Requests</a></li>
+              <li><a href="/commands/files" data-mlr-text>Files</a></li>
+              <li><a href="/commands/local-storage" data-mlr-text>Local Storage</a></li>
+              <li><a href="/commands/cookies" data-mlr-text>Cookies</a></li>
+              <li><a href="/commands/spies-stubs-clocks" data-mlr-text>Spies, Stubs &amp; Clocks</a></li>
             </ul>
           </li>
-          <li><a href="/utilities">Utilities</a></li>
-          <li class="active"><a href="/cypress-api">Cypress API</a></li>
+          <li><a href="/utilities" data-mlr-text>Utilities</a></li>
+          <li class="active"><a href="/cypress-api" data-mlr-text>Cypress API</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
           <li><a href="https://github.com/cypress-io/cypress-example-kitchensink">GitHub</a></li>
+          <li><select id="mbPOCControlsLangDrop" class="ls"></select></li>
         </ul>
       </div>
     </div>
@@ -62,8 +64,8 @@
 
   <div class="banner">
     <div class="container">
-      <h1>Cypress API</h1>
-      <p>Examples of uses of the Cypress API, for a full reference, go to <a href="https://on.cypress.io/custom-commands" target="_blank">docs.cypress.io</a>
+      <h1 data-mlr-text>Cypress API</h1>
+      <p data-mlr-text>Examples of uses of the Cypress API, for a full reference, go to <a href="https://on.cypress.io/custom-commands" target="_blank">docs.cypress.io</a>
       </p>
     </div>
   </div>
@@ -73,7 +75,7 @@
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/custom-commands">Cypress.Commands.add()</a></h4>
-          <p>To add a command, use <a href="https://on.cypress.io/custom-commands"><code>Cypress.Commands.add()</code></a>.</p>
+          <p data-mlr-text>To add a command, use <a href="https://on.cypress.io/custom-commands"><code>Cypress.Commands.add()</code></a>.</p>
           <pre><code class="javascript">Cypress.Commands.add('console', {
   prevSubject: true,
 }, (subject, method) => {
@@ -88,7 +90,7 @@
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/cookies">Cypress.Cookies.debug()</a></h4>
-          <p>To enable or disable cookie debugging, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.debug()</code></a>.</p>
+          <p data-mlr-text>To enable or disable cookie debugging, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.debug()</code></a>.</p>
           <pre><code class="javascript">// Cypress will now log in the console when
 // cookies are set or removed
 Cypress.Cookies.debug(true)
@@ -105,7 +107,7 @@ cy.setCookie('fakeCookie', '123ABC')
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/cookies">Cypress.Cookies.preserveOnce()</a></h4>
-          <p>To preserve cookies by its key, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.preserveOnce()</code></a>.</p>
+          <p data-mlr-text>To preserve cookies by its key, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.preserveOnce()</code></a>.</p>
           <pre><code class="javascript">cy.getCookie('fakeCookie').should('not.be.ok')
 
 // preserving a cookie will not clear it when
@@ -118,7 +120,7 @@ Cypress.Cookies.preserveOnce('lastCookie')</code></pre>
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/cookies">Cypress.Cookies.default()</a></h4>
-          <p>To set defaults for all cookies, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.default()</code></a>.</p>
+          <p data-mlr-text>To set defaults for all cookies, use <a href="https://on.cypress.io/cookies"><code>Cypress.Cookies.default()</code></a>.</p>
           <pre><code class="javascript">Cypress.Cookies.defaults({
   whitelist: 'session_id'
 })</code></pre>
@@ -128,7 +130,7 @@ Cypress.Cookies.preserveOnce('lastCookie')</code></pre>
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/cypress-server">Cypress.Server.default()</a></h4>
-          <p>To change the default configuration for <code>cy.server</code>, use <a href="https://on.cypress.io/cypress-server"><code>Cypress.Server.defaults()</code></a>.</p>
+          <p data-mlr-text>To change the default configuration for <code>cy.server</code>, use <a href="https://on.cypress.io/cypress-server"><code>Cypress.Server.defaults()</code></a>.</p>
           <pre><code class="javascript">Cypress.Server.defaults({
   delay: 0,
   force404: true,
@@ -142,7 +144,7 @@ Cypress.Cookies.preserveOnce('lastCookie')</code></pre>
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/arch">Cypress.arch</a></h4>
-          <p>To get CPU architecture name of underlying OS, use <a href="https://on.cypress.io/arch"><code>Cypress.arch</code></a>.</p>
+          <p data-mlr-text>To get CPU architecture name of underlying OS, use <a href="https://on.cypress.io/arch"><code>Cypress.arch</code></a>.</p>
           <pre><code class="javascript">expect(Cypress.arch).to.exist</code></pre>
         </div>
 
@@ -150,7 +152,7 @@ Cypress.Cookies.preserveOnce('lastCookie')</code></pre>
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/config">Cypress.config()</a></h4>
-          <p>To get or set configuration options, use <a href="https://on.cypress.io/config"><code>Cypress.config()</code></a>.</p>
+          <p data-mlr-text>To get or set configuration options, use <a href="https://on.cypress.io/config"><code>Cypress.config()</code></a>.</p>
           <pre><code class="javascript">var myConfig = Cypress.config()
 
 expect(myConfig).to.have.property('animationDistanceThreshold', 5)
@@ -177,7 +179,7 @@ Cypress.config('pageLoadTimeout', 60000)
 
         <div class="col-xs-7">
           <h4><a href="https://on.cypress.io/dom">Cypress.dom.isHidden()</a></h4>
-          <p>To see whether a DOM element is hidden, use <a href="https://on.cypress.io/dom"><code>Cypress.dom.isHidden()</code></a>.</p>
+          <p data-mlr-text>To see whether a DOM element is hidden, use <a href="https://on.cypress.io/dom"><code>Cypress.dom.isHidden()</code></a>.</p>
           <pre><code class="javascript">let hiddenP = Cypress.$('.dom-p p.hidden').get(0)
 let visibleP = Cypress.$('.dom-p p.visible').get(0)
 
@@ -198,7 +200,7 @@ expect(Cypress.dom.isHidden(visibleP)).to.be.false</code></pre>
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/env">Cypress.env()</a></h4>
-          <p>To get or set environment variable, use <a href="https://on.cypress.io/env"><code>Cypress.env()</code></a>.</p>
+          <p data-mlr-text>To get or set environment variable, use <a href="https://on.cypress.io/env"><code>Cypress.env()</code></a>.</p>
           <pre><code class="javascript">// set multiple environment variables
 Cypress.env({
   host: 'veronica.dev.local',
@@ -221,7 +223,7 @@ expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/'
 
         <div class="col-xs-12">
           <h4>Cypress.log()</h4>
-          <p>To control what is printed to the Command Log <a href="https://on.cypress.io/cypress-log"><code>Cypress.log()</code></a>.</p>
+          <p data-mlr-text>To control what is printed to the Command Log <a href="https://on.cypress.io/cypress-log"><code>Cypress.log()</code></a>.</p>
           <pre><code class="javascript"></code></pre>
         </div>
 
@@ -229,7 +231,7 @@ expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/'
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/platform">Cypress.platform</a></h4>
-          <p>To get name of underlying OS, use <a href="https://on.cypress.io/platform"><code>Cypress.platform</code></a>.</p>
+          <p data-mlr-text>To get name of underlying OS, use <a href="https://on.cypress.io/platform"><code>Cypress.platform</code></a>.</p>
           <pre><code class="javascript">expect(Cypress.platform).to.exist</code></pre>
         </div>
 
@@ -237,7 +239,7 @@ expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/'
 
         <div class="col-xs-12">
           <h4><a href="https://on.cypress.io/version">Cypress.version</a></h4>
-          <p>To get version of Cypress being run, use <a href="https://on.cypress.io/version"><code>Cypress.version</code></a>.</p>
+          <p data-mlr-text>To get version of Cypress being run, use <a href="https://on.cypress.io/version"><code>Cypress.version</code></a>.</p>
           <pre><code class="javascript">expect(Cypress.version).to.exist</code></pre>
         </div>
 
@@ -250,5 +252,6 @@ expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/'
   <script src="/assets/js/vendor/bootstrap.min.js"></script>
   <script src="/assets/js/vendor/highlight.pack.js"></script>
   <script src="/assets/js/scripts.js"></script>
+  <script type="module" src="/assets/js/languageSwitcher.js"></script>
 </body>
 </html>

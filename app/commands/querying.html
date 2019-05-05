@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/vendor/fira.css" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/languageSwitcher.css">
   </head>
 
   <body>
@@ -38,46 +39,43 @@
                 class="dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
+                data-mlr-text
                 >Commands <span class="caret"></span
               ></a>
               <ul class="dropdown-menu">
                 <li class="active">
-                  <a href="/commands/querying">Querying</a>
+                  <a href="/commands/querying" data-mlr-text>Querying</a>
                 </li>
-                <li><a href="/commands/traversal">Traversal</a></li>
-                <li><a href="/commands/actions">Actions</a></li>
-                <li><a href="/commands/window">Window</a></li>
-                <li><a href="/commands/viewport">Viewport</a></li>
-                <li><a href="/commands/location">Location</a></li>
-                <li><a href="/commands/navigation">Navigation</a></li>
-                <li><a href="/commands/assertions">Assertions</a></li>
-                <li><a href="/commands/misc">Misc</a></li>
-                <li><a href="/commands/connectors">Connectors</a></li>
-                <li><a href="/commands/aliasing">Aliasing</a></li>
-                <li><a href="/commands/waiting">Waiting</a></li>
+                <li><a href="/commands/traversal" data-mlr-text>Traversal</a></li>
+                <li><a href="/commands/actions" data-mlr-text>Actions</a></li>
+                <li><a href="/commands/window" data-mlr-text>Window</a></li>
+                <li><a href="/commands/viewport" data-mlr-text>Viewport</a></li>
+                <li><a href="/commands/location" data-mlr-text>Location</a></li>
+                <li><a href="/commands/navigation" data-mlr-text>Navigation</a></li>
+                <li><a href="/commands/assertions" data-mlr-text>Assertions</a></li>
+                <li><a href="/commands/misc" data-mlr-text>Misc</a></li>
+                <li><a href="/commands/connectors" data-mlr-text>Connectors</a></li>
+                <li><a href="/commands/aliasing" data-mlr-text>Aliasing</a></li>
+                <li><a href="/commands/waiting" data-mlr-text>Waiting</a></li>
                 <li>
-                  <a href="/commands/network-requests">Network Requests</a>
+                  <a href="/commands/network-requests" data-mlr-text>Network Requests</a>
                 </li>
-                <li><a href="/commands/files">Files</a></li>
-                <li><a href="/commands/local-storage">Local Storage</a></li>
-                <li><a href="/commands/cookies">Cookies</a></li>
+                <li><a href="/commands/files" data-mlr-text>Files</a></li>
+                <li><a href="/commands/local-storage" data-mlr-text>Local Storage</a></li>
+                <li><a href="/commands/cookies" data-mlr-text>Cookies</a></li>
                 <li>
-                  <a href="/commands/spies-stubs-clocks"
+                  <a href="/commands/spies-stubs-clocks" data-mlr-text
                     >Spies, Stubs &amp; Clocks</a
                   >
                 </li>
               </ul>
             </li>
-            <li><a href="/utilities">Utilities</a></li>
-            <li><a href="/cypress-api">Cypress API</a></li>
+            <li><a href="/utilities" data-mlr-text>Utilities</a></li>
+            <li><a href="/cypress-api" data-mlr-text>Cypress API</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right">
-            <li>
-              <a
-                href="https://github.com/cypress-io/cypress-example-kitchensink"
-                >GitHub</a
-              >
-            </li>
+            <li><a href="https://github.com/cypress-io/cypress-example-kitchensink">GitHub</a></li>
+            <li><select id="mbPOCControlsLangDrop" class="ls"></select></li>
           </ul>
         </div>
       </div>
@@ -85,8 +83,8 @@
 
     <div class="banner">
       <div class="container">
-        <h1>Querying</h1>
-        <p>
+        <h1 data-mlr-text>Querying</h1>
+        <p data-mlr-text>
           Examples of querying for DOM elements in Cypress, for a full reference
           of commands, go to
           <a href="https://on.cypress.io/api" target="_blank"
@@ -106,7 +104,7 @@
         <div class="row">
           <div class="col-xs-7">
             <h4><a href="https://on.cypress.io/get">cy.get()</a></h4>
-            <p>
+            <p data-mlr-text>
               To query for the button, use the
               <a href="https://on.cypress.io/get"><code>cy.get()</code></a>
               command.
@@ -116,7 +114,7 @@
 cy.get('.query-btn').should('contain', 'Button')
 
 cy.get('#querying .well>button:first').should('contain', 'Button')
-//              ↲
+//              ↲
 // Use CSS selectors just like jQuery</code></pre>
           </div>
 
@@ -131,7 +129,7 @@ cy.get('#querying .well>button:first').should('contain', 'Button')
 
         <div class="row">
           <div class="col-xs-7">
-            <p>
+            <p data-mlr-text>
               To find elements by data attribute, query using the attribute
               selector.
             </p>
@@ -140,7 +138,7 @@ cy.get('#querying .well>button:first').should('contain', 'Button')
 
           <div class="col-xs-5">
             <div class="well well-1-line">
-              <div data-test-id="test-example" class="example">
+              <div data-test-id="test-example" class="example" data-mlr-text>
                 Div with <code>data-test-id</code>
               </div>
             </div>
@@ -149,7 +147,7 @@ cy.get('#querying .well>button:first').should('contain', 'Button')
 
         <div class="row">
           <div class="col-xs-7">
-            <p>
+            <p data-mlr-text>
               <code>cy.get()</code> yields a jQuery object, you can get its attribute by invoking the <code>.attr()</code> method.
             </p>
             <pre><code class="javascript">cy.get('[data-test-id="test-example"]')
@@ -165,7 +163,7 @@ cy.get('[data-test-id="test-example"]')
 
         <div class="row">
           <div class="col-xs-7">
-            <p>
+            <p data-mlr-text>
               Alternatively, chain assertions directly to the <code>cy.get()</code> call.
               See <a href="https://on.cypress.io/assertions" target="_blank">assertions documentation</a>.
             </p>
@@ -180,11 +178,11 @@ cy.get('[data-test-id="test-example"]')
         <div class="row">
           <div class="col-xs-7">
             <h4><a href="https://on.cypress.io/contains">cy.contains()</a></h4>
-            <p>
+            <p data-mlr-text>
               We can find elements by their content using
               <a href="https://on.cypress.io/contains"
                 ><code>cy.contains()</code></a
-              >
+              >.
             </p>
             <pre><code class="javascript">cy.get('.query-list')
   .contains('bananas').should('have.class', 'third')
@@ -224,9 +222,9 @@ cy.get('.query-button')
 
           <div class="col-xs-7">
             <h4><a href="https://on.cypress.io/within">.within()</a></h4>
-            <p>
+            <p data-mlr-text>
               We can find elements within a specific DOM element
-              <a href="https://on.cypress.io/within"><code>.within()</code></a>
+              <a href="https://on.cypress.io/within"><code>.within()</code></a>.
             </p>
             <pre><code class="javascript">cy.get('.query-form').within(() => {
   cy.get('input:first').should('have.attr', 'placeholder', 'Email')
@@ -263,11 +261,11 @@ cy.get('.query-button')
 
           <div class="col-xs-7">
             <h4><a href="https://on.cypress.io/root">cy.root()</a></h4>
-            <p>
-              We can find the root DOM element<a
+            <p data-mlr-text>
+              We can find the root DOM element <a
                 href="https://on.cypress.io/root"
                 ><code>cy.root()</code></a
-              >
+              >.
             </p>
             <pre><code class="javascript">// By default, root is the document
 cy.root().should('match', 'html')
@@ -296,5 +294,6 @@ cy.get('.query-ul').within(() => {
     <script src="/assets/js/vendor/bootstrap.min.js"></script>
     <script src="/assets/js/vendor/highlight.pack.js"></script>
     <script src="/assets/js/scripts.js"></script>
+    <script type="module" src="/assets/js/languageSwitcher.js"></script>
   </body>
 </html>

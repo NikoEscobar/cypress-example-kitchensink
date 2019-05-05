@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/vendor/fira.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/languageSwitcher.css">
 </head>
 
 <body>
@@ -29,32 +30,33 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="active" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Commands <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-mlr-text>Commands <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/commands/querying">Querying</a></li>
-              <li><a href="/commands/traversal">Traversal</a></li>
-              <li><a href="/commands/actions">Actions</a></li>
-              <li><a href="/commands/window">Window</a></li>
-              <li><a href="/commands/viewport">Viewport</a></li>
-              <li><a href="/commands/location">Location</a></li>
-              <li><a href="/commands/navigation">Navigation</a></li>
-              <li><a href="/commands/assertions">Assertions</a></li>
-              <li><a href="/commands/misc">Misc</a></li>
-              <li><a href="/commands/connectors">Connectors</a></li>
-              <li><a href="/commands/aliasing">Aliasing</a></li>
-              <li class="active"><a href="/commands/waiting">Waiting</a></li>
-              <li><a href="/commands/network-requests">Network Requests</a></li>
-              <li><a href="/commands/files">Files</a></li>
-              <li><a href="/commands/local-storage">Local Storage</a></li>
-              <li><a href="/commands/cookies">Cookies</a></li>
-              <li><a href="/commands/spies-stubs-clocks">Spies, Stubs &amp; Clocks</a></li>
+              <li><a href="/commands/querying" data-mlr-text>Querying</a></li>
+              <li><a href="/commands/traversal" data-mlr-text>Traversal</a></li>
+              <li><a href="/commands/actions" data-mlr-text>Actions</a></li>
+              <li><a href="/commands/window" data-mlr-text>Window</a></li>
+              <li><a href="/commands/viewport" data-mlr-text>Viewport</a></li>
+              <li><a href="/commands/location" data-mlr-text>Location</a></li>
+              <li><a href="/commands/navigation" data-mlr-text>Navigation</a></li>
+              <li><a href="/commands/assertions" data-mlr-text>Assertions</a></li>
+              <li><a href="/commands/misc" data-mlr-text>Misc</a></li>
+              <li><a href="/commands/connectors" data-mlr-text>Connectors</a></li>
+              <li><a href="/commands/aliasing" data-mlr-text>Aliasing</a></li>
+              <li class="active"><a href="/commands/waiting" data-mlr-text>Waiting</a></li>
+              <li><a href="/commands/network-requests" data-mlr-text>Network Requests</a></li>
+              <li><a href="/commands/files" data-mlr-text>Files</a></li>
+              <li><a href="/commands/local-storage" data-mlr-text>Local Storage</a></li>
+              <li><a href="/commands/cookies" data-mlr-text>Cookies</a></li>
+              <li><a href="/commands/spies-stubs-clocks" data-mlr-text>Spies, Stubs &amp; Clocks</a></li>
             </ul>
           </li>
-          <li><a href="/utilities">Utilities</a></li>
-          <li><a href="/cypress-api">Cypress API</a></li>
+          <li><a href="/utilities" data-mlr-text>Utilities</a></li>
+          <li><a href="/cypress-api" data-mlr-text>Cypress API</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
           <li><a href="https://github.com/cypress-io/cypress-example-kitchensink">GitHub</a></li>
+          <li><select id="mbPOCControlsLangDrop" class="ls"></select></li>
         </ul>
       </div>
     </div>
@@ -62,8 +64,8 @@
 
   <div class="banner">
     <div class="container">
-      <h1>Waiting</h1>
-      <p>Examples of waiting for an amount of time or resource to resolve in Cypress, for a full reference of commands, go to <a href="https://on.cypress.io/api" target="_blank">docs.cypress.io</a>
+      <h1 data-mlr-text>Waiting</h1>
+      <p data-mlr-text>Examples of waiting for an amount of time or resource to resolve in Cypress, for a full reference of commands, go to <a href="https://on.cypress.io/api" target="_blank">docs.cypress.io</a>
       </p>
     </div>
   </div>
@@ -72,7 +74,7 @@
       <div class="row">
         <div class="col-xs-7">
           <h4><a href="https://on.cypress.io/wait">cy.wait()</a></h4>
-          <p>To wait for a specific amount of time or resource to resolve, use the <a href="https://on.cypress.io/wait"><code>cy.wait()</code></a> command.</p>
+          <p data-mlr-text>To wait for a specific amount of time or resource to resolve, use the <a href="https://on.cypress.io/wait"><code>cy.wait()</code></a> command.</p>
           <pre><code class="javascript">cy.get('.wait-input1').type('Wait 1000ms after typing')
 cy.wait(1000)
 cy.get('.wait-input2').type('Wait 1000ms after typing')
@@ -119,5 +121,6 @@ cy.wait('@getComment').its('status').should('eq', 200)</code></pre>
   <script src="/assets/js/vendor/bootstrap.min.js"></script>
   <script src="/assets/js/vendor/highlight.pack.js"></script>
   <script src="/assets/js/scripts.js"></script>
+  <script type="module" src="/assets/js/languageSwitcher.js"></script>
 </body>
 </html>
