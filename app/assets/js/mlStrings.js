@@ -1,4 +1,4 @@
-export const mLstrings = [
+export const mlStrings = [
   {
     English: "This is an example app used to showcase Cypress.io testing. For a full reference of our documentation, go to docs.cypress.io",
     // Polish: "Jest to przykładowa aplikacja do testowania Cypress.io. Pełne odniesienie do naszej dokumentacji znajduje się na stronie docs.cypress.io",

@@ -1,6 +1,6 @@
 //solution based on benfrain.com
 import { mlCodes } from './mlCodes.js';
-import { mLstrings } from './mLstrings.js';
+import { mlStrings } from './mlStrings.js';
 
 // Global var :(
 let mlrLangInUse;
@@ -11,13 +11,13 @@ let mlr = function ({
     dropID = "mbPOCControlsLangDrop",
     stringAttribute = "data-mlr-text",
     chosenLang = "English",
-    mLstrings = mLstrings,
+    mlStrings = mlStrings,
     countryCodes = false,
     countryCodeData = [],
 } = {}) {
     const root = document.documentElement;
 
-    let listOfLanguages = Object.keys(mLstrings[0]);
+    let listOfLanguages = Object.keys(mlStrings[0]);
     mlrLangInUse = chosenLang;
 
     (function createMLDrop() {
@@ -58,7 +58,7 @@ let mlr = function ({
         stringsToBeResolved.forEach(stringToBeResolved => {
             let originaltextContent = stringToBeResolved.textContent;
             originaltextContent = formatText(stringToBeResolved);
-            let resolvedText = resolveMLString(originaltextContent, mLstrings);
+            let resolvedText = resolveMLString(originaltextContent, mlStrings);
 
             if(stringToBeResolved.children.length > 0) {
                 stringToBeResolved.innerHTML = restoreElementChildren(stringToBeResolved, resolvedText);
@@ -69,8 +69,8 @@ let mlr = function ({
     }
 };
 
-function resolveMLString(stringToBeResolved, mLstrings) {
-    let matchingStringIndex = mLstrings.find(function (stringObj) {
+function resolveMLString(stringToBeResolved, mlStrings) {
+    let matchingStringIndex = mlStrings.find(function (stringObj) {
         // Create an array of the objects values:
         let stringValues = Object.values(stringObj);
         // Now return if we can find that string anywhere in there
@@ -91,7 +91,7 @@ mlr({
     dropID: "mbPOCControlsLangDrop",
     stringAttribute: "data-mlr-text",
     chosenLang: "English",
-    mLstrings: mLstrings,
+    mlStrings: mlStrings,
     countryCodes: true,
     countryCodeData: mlCodes,
 });
